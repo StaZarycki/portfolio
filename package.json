@@ -10,7 +10,13 @@
     "format": "pnpm exec prettier . --write"
   },
   "dependencies": {
-    "astro": "^5.13.2"
+    "@astrojs/cloudflare": "^12.6.4",
+    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.5.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "astro": "^5.13.2",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@astrojs/language-server": "^2.15.4",
@@ -23,6 +29,7 @@
     "jiti": "^2.5.1",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
-    "typescript-eslint": "^8.40.0"
+    "typescript-eslint": "^8.40.0",
+    "wrangler": "^4.32.0"
   }
 }
