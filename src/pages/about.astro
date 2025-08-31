@@ -5,42 +5,103 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="About">
   <div class="page">
     <h1>About</h1>
-    <p>
-      This is the Astro Terminal theme, a port of the fantastic
-      <a
-        href="https://github.com/panr/hugo-theme-terminal"
-        target="_blank"
-        rel="noopener">Hugo Terminal theme</a
-      >
-      created by <a
-        href="https://github.com/panr"
-        target="_blank"
-        rel="noopener">panr</a
-      >.
-    </p>
+    <p>My name is Stan. I'm a backend developer from Cracow, Poland.</p>
 
     <p>
-      The Astro version maintains all the great features of the original theme
-      whilst using Astro's modern static site generation capabilities.
+      I’m passionate about software development and emerging technologies. I
+      stay up to date with industry trends and follow best practices to build
+      solutions that are not only reliable but also innovative. In my free time,
+      I enjoy working on robotics projects, reading, and playing video games. My
+      goal is to grow into one of the leading software developers in the field.
     </p>
 
-    <p>
-      The theme features syntax highlighting with Shiki, customisable colour
-      schemes via
-      <a
-        href="https://panr.github.io/terminal-css/"
-        target="_blank"
-        rel="noopener">Terminal.css</a
-      >, Fira Code monospace font, and a beautiful retro terminal aesthetic.
-    </p>
+    <div class="grid">
+      <div class="grid-item">
+        <h2>Technologies I use</h2>
+        <ul>
+          <li>JavaScript | TypeScript</li>
+          <li>Node.js</li>
+          <li>Express, NestJS (REST)</li>
+          <li>Apollo GraphQL (GraphQL)</li>
+          <li>PostgreSQL, MongoDB (Databases)</li>
+          <li>S3, EC2, SQS, Lambda (AWS)</li>
+          <li>Docker, Docker Compose</li>
+          <li>Git, GitHub</li>
+          <li>GitHub Actions</li>
+        </ul>
+      </div>
 
-    <p>
-      Ported to Astro by <a
-        href="https://github.com/dennisklappe"
-        target="_blank"
-        rel="noopener">Dennis Klappe</a
-      >.
-    </p>
+      <div class="grid-item">
+        <h2>Tools I use</h2>
+        <ul>
+          <li>Jira, Linear</li>
+          <li>Confluence</li>
+          <li>Coda</li>
+          <li>Slack</li>
+          <li>Notion</li>
+          <li>Sentry</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="grid-item">
+        <h2>Soft Skills</h2>
+        <ul>
+          <li>Creative thinking</li>
+          <li>Problem solving</li>
+          <li>Attention to details</li>
+          <li>Teamwork</li>
+          <li>Adaptability</li>
+        </ul>
+      </div>
+
+      <div class="grid-item">
+        <h2>Languages I speak</h2>
+        <ul>
+          <li>Polish - Native</li>
+          <li>English - Fluent</li>
+          <li>Japanese - Elementary</li>
+        </ul>
+      </div>
+    </div>
+
+    <!--<p>-->
+    <!--  This is the Astro Terminal theme, a port of the fantastic-->
+    <!--  <a-->
+    <!--    href="https://github.com/panr/hugo-theme-terminal"-->
+    <!--    target="_blank"-->
+    <!--    rel="noopener">Hugo Terminal theme</a-->
+    <!--  >-->
+    <!--  created by <a-->
+    <!--    href="https://github.com/panr"-->
+    <!--    target="_blank"-->
+    <!--    rel="noopener">panr</a-->
+    <!--  >.-->
+    <!--</p>-->
+
+    <!--<p>-->
+    <!--  The Astro version maintains all the great features of the original theme-->
+    <!--  whilst using Astro's modern static site generation capabilities.-->
+    <!--</p>-->
+
+    <!--<p>-->
+    <!--  The theme features syntax highlighting with Shiki, customisable colour-->
+    <!--  schemes via-->
+    <!--  <a-->
+    <!--    href="https://panr.github.io/terminal-css/"-->
+    <!--    target="_blank"-->
+    <!--    rel="noopener">Terminal.css</a-->
+    <!--  >, Fira Code monospace font, and a beautiful retro terminal aesthetic.-->
+    <!--</p>-->
+
+    <!--<p>-->
+    <!--  Ported to Astro by <a-->
+    <!--    href="https://github.com/dennisklappe"-->
+    <!--    target="_blank"-->
+    <!--    rel="noopener">Dennis Klappe</a-->
+    <!--  >.-->
+    <!--</p>-->
   </div>
 </BaseLayout>
 
@@ -48,5 +109,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .page {
     max-width: 760px;
     margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
