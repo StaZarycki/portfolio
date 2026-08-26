@@ -1,0 +1,121 @@
+﻿---
+
+---
+
+<form id="contact-form" class="space-y-12 text-left">
+  <div class="border-b border-white/10 pb-12">
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-1">
+      <div class="sm:col-span-1 w-full sm:w-1/2">
+        <label for="name" class="block text-sm/6 font-medium text-white"
+          >Name <span class="text-indigo-400">*</span></label
+        >
+        <div class="mt-2">
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+          />
+        </div>
+      </div>
+      <div class="sm:col-span-1 w-full sm:w-1/2">
+        <label for="email" class="block text-sm/6 font-medium text-white"
+          >Email address <span class="text-indigo-400">*</span></label
+        >
+        <div class="mt-2">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="contact@example.com"
+            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-full">
+        <label for="message" class="block text-sm/6 font-medium text-white"
+          >Message <span class="text-indigo-400">*</span></label
+        >
+        <div class="mt-2">
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="4"
+            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-x-6">
+    <span id="form-status" class="text-sm font-medium"></span>
+    <button
+      id="submit-button"
+      type="submit"
+      class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+      >Send</button
+    >
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById(
+    "contact-form",
+  ) as HTMLFormElement | null;
+  const statusEl = document.getElementById("form-status");
+  const submitBtn = document.getElementById(
+    "submit-button",
+  ) as HTMLButtonElement | null;
+
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdenqybe";
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!form || !submitBtn || !statusEl) return;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    statusEl.textContent = "";
+    statusEl.className = "text-sm font-medium";
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        statusEl.textContent = "Message sent successfully!";
+        statusEl.classList.add("text-green-400");
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        statusEl.textContent =
+          errorData.errors?.[0]?.message || "Failed to send message.";
+        statusEl.classList.add("text-red-400");
+      }
+    } catch {
+      statusEl.textContent = "An unexpected network error occurred.";
+      statusEl.classList.add("text-red-400");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send";
+    }
+  });
+</script>
