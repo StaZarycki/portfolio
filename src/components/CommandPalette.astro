@@ -1,5 +1,5 @@
 ---
-import { resolvePath } from '../utils/navigation';
+import { resolvePath } from "../utils/navigation";
 ---
 
 <div
@@ -9,10 +9,17 @@ import { resolvePath } from '../utils/navigation';
   aria-modal="true"
 >
   <!-- Backdrop -->
-  <div data-command-backdrop class="fixed inset-0 z-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
+  <div
+    data-command-backdrop
+    class="fixed inset-0 z-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+    aria-hidden="true"
+  >
+  </div>
 
   <!-- Palette -->
-  <div class="relative z-10 mx-auto max-w-2xl transform divide-y divide-slate-100 dark:divide-slate-800 overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 transition-all">
+  <div
+    class="relative z-10 mx-auto max-w-2xl transform divide-y divide-slate-100 dark:divide-slate-800 overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 transition-all"
+  >
     <div class="relative">
       <svg
         class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-slate-400"
@@ -58,26 +65,31 @@ import { resolvePath } from '../utils/navigation';
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+        ></path>
       </svg>
-      <p class="mt-4 text-sm text-slate-900 dark:text-white font-medium">No recent searches</p>
-      <p class="mt-2 text-sm text-slate-500">Quickly find blog posts and product updates by typing.</p>
+      <p class="mt-4 text-sm text-slate-900 dark:text-white font-medium">
+        No recent searches
+      </p>
+      <p class="mt-2 text-sm text-slate-500">
+        Quickly find blog posts and product updates by typing.
+      </p>
     </div>
   </div>
 </div>
 
-<script is:inline define:vars={{ resolvePath: resolvePath('/') }}>
+<script is:inline define:vars={{ resolvePath: resolvePath("/") }}>
   // We use define:vars to pass the base path resolution to the client-side script
-  
+
   function setupSearch() {
-    const palette = document.getElementById('command-palette');
-    const input = document.getElementById('search-input');
-    const resultsList = document.getElementById('search-results');
-    const helpState = document.getElementById('search-help');
-    const backdrop = palette?.querySelector('[data-command-backdrop]');
+    const palette = document.getElementById("command-palette");
+    const input = document.getElementById("search-input");
+    const resultsList = document.getElementById("search-results");
+    const helpState = document.getElementById("search-help");
+    const backdrop = palette?.querySelector("[data-command-backdrop]");
 
     if (!palette || !input || !resultsList || !helpState) return;
-    
+
     window.__zenixSearchIndex = window.__zenixSearchIndex || [];
     window.__zenixSearchLoaded = window.__zenixSearchLoaded || false;
 
@@ -93,27 +105,28 @@ import { resolvePath } from '../utils/navigation';
           renderResults(getMatches(query));
         }
       } catch (err) {
-        console.error('Failed to load search index:', err);
+        console.error("Failed to load search index:", err);
       }
     }
 
     function getMatches(query) {
-      return window.__zenixSearchIndex.filter(item => 
-        item.title.toLowerCase().includes(query) || 
-        item.description.toLowerCase().includes(query)
+      return window.__zenixSearchIndex.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query),
       );
     }
 
     function togglePalette() {
-      const isHidden = palette.classList.contains('hidden');
+      const isHidden = palette.classList.contains("hidden");
       if (isHidden) {
-        palette.classList.remove('hidden');
+        palette.classList.remove("hidden");
         loadIndex();
         input.focus();
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
       } else {
-        palette.classList.add('hidden');
-        document.body.style.overflow = '';
+        palette.classList.add("hidden");
+        document.body.style.overflow = "";
       }
     }
 
@@ -121,35 +134,39 @@ import { resolvePath } from '../utils/navigation';
 
     if (!window.__zenixSearchKeyBound) {
       window.__zenixSearchKeyBound = true;
-      window.addEventListener('keydown', (e) => {
-        const activePalette = document.getElementById('command-palette');
-        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      window.addEventListener("keydown", (e) => {
+        const activePalette = document.getElementById("command-palette");
+        if ((e.metaKey || e.ctrlKey) && e.key === "k") {
           e.preventDefault();
           window.toggleCommandPalette?.();
         }
-        
-        if (e.key === 'Escape' && activePalette && !activePalette.classList.contains('hidden')) {
+
+        if (
+          e.key === "Escape" &&
+          activePalette &&
+          !activePalette.classList.contains("hidden")
+        ) {
           window.toggleCommandPalette?.();
         }
       });
     }
 
-    if (palette.dataset.searchBound === 'true') return;
-    palette.dataset.searchBound = 'true';
+    if (palette.dataset.searchBound === "true") return;
+    palette.dataset.searchBound = "true";
 
     // Click backdrop to close
-    palette.addEventListener('click', (e) => {
+    palette.addEventListener("click", (e) => {
       if (e.target === palette || e.target === backdrop) {
         togglePalette();
       }
     });
 
-    input.addEventListener('input', (e) => {
+    input.addEventListener("input", (e) => {
       const query = e.target.value.toLowerCase().trim();
-      
+
       if (!query) {
-        resultsList.classList.add('hidden');
-        helpState.classList.remove('hidden');
+        resultsList.classList.add("hidden");
+        helpState.classList.remove("hidden");
         return;
       }
 
@@ -157,9 +174,9 @@ import { resolvePath } from '../utils/navigation';
     });
 
     function renderResults(matches) {
-      helpState.classList.add('hidden');
-      resultsList.classList.remove('hidden');
-      
+      helpState.classList.add("hidden");
+      resultsList.classList.remove("hidden");
+
       if (matches.length === 0) {
         resultsList.innerHTML = `
           <li class="px-4 py-14 text-center sm:px-14">
@@ -169,13 +186,15 @@ import { resolvePath } from '../utils/navigation';
         return;
       }
 
-      resultsList.innerHTML = matches.map((item, idx) => `
+      resultsList.innerHTML = matches
+        .map(
+          (item, idx) => `
         <li
           class="group cursor-pointer select-none rounded-xl p-3 hover:bg-primary-600 dark:hover:bg-primary-500 transition-colors"
           role="option"
           tabindex="-1"
         >
-          <a href="${resolvePath}${item.slug.startsWith('/') ? item.slug.slice(1) : item.slug}" class="flex items-center">
+          <a href="${resolvePath}${item.slug.startsWith("/") ? item.slug.slice(1) : item.slug}" class="flex items-center">
             <div class="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-white/20">
               <span class="text-xs font-bold text-slate-500 dark:text-slate-400 group-hover:text-white uppercase">${item.type.charAt(0)}</span>
             </div>
@@ -185,12 +204,13 @@ import { resolvePath } from '../utils/navigation';
             </div>
           </a>
         </li>
-      `).join('');
+      `,
+        )
+        .join("");
     }
-
   }
 
   // Setup on page load and view transition
   setupSearch();
-  document.addEventListener('astro:page-load', setupSearch);
+  document.addEventListener("astro:page-load", setupSearch);
 </script>

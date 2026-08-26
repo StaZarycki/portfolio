@@ -53,14 +53,15 @@ pnpm test:e2e  # Run Playwright regression tests
 Most site-level settings live in `src/config.ts`:
 
 ```ts
-export const SITE_TITLE = 'Zenix';
-export const SITE_DESCRIPTION = 'High-converting, performance-focused Astro theme for Micro-SaaS products.';
-export const SITE_URL = 'https://zenix.farrosfr.com';
+export const SITE_TITLE = "Zenix";
+export const SITE_DESCRIPTION =
+  "High-converting, performance-focused Astro theme for Micro-SaaS products.";
+export const SITE_URL = "https://zenix.farrosfr.com";
 
 export const SOCIAL_LINKS = {
-  twitter: 'https://twitter.com/farrosfr_',
-  github: 'https://github.com/farrosfr',
-  linkedin: 'https://linkedin.com/in/yourhandle',
+  twitter: "https://twitter.com/farrosfr_",
+  github: "https://github.com/farrosfr",
+  linkedin: "https://linkedin.com/in/yourhandle",
 };
 ```
 
@@ -118,9 +119,10 @@ This repository is public, uses public pnpm dependencies, and includes setup doc
 
 ## Contributing and Collaboration
 
-We welcome contributions and collaboration! Whether you want to fix a bug, add a new feature, or improve documentation, your help is greatly appreciated. 
+We welcome contributions and collaboration! Whether you want to fix a bug, add a new feature, or improve documentation, your help is greatly appreciated.
 
 To contribute:
+
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/amazing-feature`).
 3. Commit your changes (`git commit -m 'feat: add amazing feature'`).
