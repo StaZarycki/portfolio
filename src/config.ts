@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "Stan Zarycki";
+export const SITE_TITLE = "Stanisław Zarycki";
 export const SITE_DESCRIPTION =
   "A high-performance, 100/100 Lighthouse-optimized Astro 6 SaaS theme with dark mode, MDX blog, and command palette search.";
 export const SITE_URL = "https://stazarycki.com";
@@ -21,7 +21,7 @@ export const SOCIAL_LINKS = {
 // Navigation Links
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
-  // { href: '/#features', label: 'Features' },
+  // { href: '/#features', label: 'Skills' },
   // { href: '/#testimonials', label: 'Testimonials' },
   // { href: '/pricing/', label: 'Pricing' },
   // { href: '/blog/', label: 'Blog' },
@@ -32,7 +32,7 @@ export const FOOTER_LINKS = [
   // {
   //   title: "Product",
   //   links: [
-  //     { label: "Features", href: "/#features" },
+  //     { label: "Skills", href: "/#features" },
   //     { label: "Pricing", href: "/pricing/" },
   //     { label: "Changelog", href: "/changelog/" },
   //     { label: "Integrations", href: "#" },

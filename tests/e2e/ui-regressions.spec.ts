@@ -65,7 +65,7 @@ test.describe("theme and navigation regressions", () => {
     await page.goto("/pricing/");
 
     await expect(
-      page.locator("header nav a", { hasText: "Features" }),
+      page.locator("header nav a", { hasText: "Skills" }),
     ).toHaveAttribute("href", "/#features");
     await expect(
       page.locator("header nav a", { hasText: "Testimonials" }),
