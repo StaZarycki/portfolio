@@ -7,7 +7,7 @@
     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-1">
       <div class="sm:col-span-1 w-full sm:w-1/2">
         <label for="name" class="block text-sm/6 font-medium text-white"
-          >Name <span class="text-indigo-400">*</span></label
+          >Name <span class="dark:text-indigo-400 text-indigo-300">*</span></label
         >
         <div class="mt-2">
           <input
@@ -21,7 +21,7 @@
       </div>
       <div class="sm:col-span-1 w-full sm:w-1/2">
         <label for="email" class="block text-sm/6 font-medium text-white"
-          >Email address <span class="text-indigo-400">*</span></label
+          >Email address <span class="dark:text-indigo-400 text-indigo-300">*</span></label
         >
         <div class="mt-2">
           <input
@@ -31,14 +31,14 @@
             required
             autocomplete="email"
             placeholder="contact@example.com"
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 dark:placeholder:text-gray-400 placeholder:text-gray-300/40 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
           />
         </div>
       </div>
 
       <div class="col-span-full">
         <label for="message" class="block text-sm/6 font-medium text-white"
-          >Message <span class="text-indigo-400">*</span></label
+          >Message <span class="dark:text-indigo-400 text-indigo-300">*</span></label
         >
         <div class="mt-2">
           <textarea
@@ -58,7 +58,7 @@
     <button
       id="submit-button"
       type="submit"
-      class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+      class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 opacity-80 hover:opacity-100"
       >Send</button
     >
   </div>
