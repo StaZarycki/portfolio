@@ -1,25 +1,34 @@
 ﻿---
+interface Props {
+  type: "programming" | "technology" | "concept";
+}
+
 const { type } = Astro.props;
-const typeMap = new Map();
 
-typeMap.set("programming", {
-  darkColor: "bg-accent-900/20",
-  color: "bg-accent-200",
-});
-typeMap.set("technology", {
-  darkColor: "bg-purple-900/20",
-  color: "bg-purple-200",
-});
-typeMap.set("concept", {
-  darkColor: "bg-blue-900/20",
-  color: "bg-blue-200",
-});
+const typeMap = {
+  programming: {
+    color: "bg-accent-200",
+    darkColor: "dark:bg-accent-900/20",
+  },
+  technology: {
+    color: "bg-purple-200",
+    darkColor: "dark:bg-purple-900/20",
+  },
+  concept: {
+    color: "bg-blue-200",
+    darkColor: "dark:bg-blue-900/20",
+  },
+} as const;
 
-const { color, darkColor } = typeMap.get(type);
+const activeTheme = typeMap[type] ?? typeMap.programming;
 ---
 
 <div
-  class=`w-22 h-22 leading-relaxed flex flex-col items-center justify-center text-6xl dark:${darkColor} ${color} rounded-2xl`
+  class:list={[
+    "w-22 h-22 leading-relaxed flex flex-col items-center justify-center text-6xl rounded-2xl",
+    activeTheme.color,
+    activeTheme.darkColor,
+  ]}
 >
   <slot />
 </div>
