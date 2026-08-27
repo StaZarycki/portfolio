@@ -1,5 +1,5 @@
 ﻿---
-
+import Button from "./Button.astro";
 ---
 
 <form id="contact-form" class="space-y-12 text-left">
@@ -7,7 +7,8 @@
     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-1">
       <div class="sm:col-span-1 w-full sm:w-1/2">
         <label for="name" class="block text-sm/6 font-medium text-white"
-          >Name <span class="dark:text-indigo-400 text-indigo-300">*</span></label
+          >Name <span class="dark:text-indigo-400 text-indigo-300">*</span
+          ></label
         >
         <div class="mt-2">
           <input
@@ -21,7 +22,9 @@
       </div>
       <div class="sm:col-span-1 w-full sm:w-1/2">
         <label for="email" class="block text-sm/6 font-medium text-white"
-          >Email address <span class="dark:text-indigo-400 text-indigo-300">*</span></label
+          >Email address <span class="dark:text-indigo-400 text-indigo-300"
+            >*</span
+          ></label
         >
         <div class="mt-2">
           <input
@@ -38,7 +41,8 @@
 
       <div class="col-span-full">
         <label for="message" class="block text-sm/6 font-medium text-white"
-          >Message <span class="dark:text-indigo-400 text-indigo-300">*</span></label
+          >Message <span class="dark:text-indigo-400 text-indigo-300">*</span
+          ></label
         >
         <div class="mt-2">
           <textarea
@@ -55,12 +59,15 @@
 
   <div class="mt-6 flex items-center justify-end gap-x-6">
     <span id="form-status" class="text-sm font-medium"></span>
-    <button
+    <Button
       id="submit-button"
       type="submit"
-      class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 opacity-80 hover:opacity-100"
-      >Send</button
+      variant="secondary"
+      size="md"
+      class="w-auto sm:w-auto text-lg px-4 py-2 shadow-xl shadow-primary-500/20"
     >
+      Send
+    </Button>
   </div>
 </form>
 
