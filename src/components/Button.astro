@@ -21,7 +21,7 @@ const baseStyles =
 
 const variants = {
   primary:
-    "bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 focus:ring-primary-500 shadow-sm",
+    "bg-primary-700 dark:bg-primary-600 text-white hover:bg-primary-700 dark:hover:bg-primary-400 focus:ring-primary-500 shadow-sm",
   secondary:
     "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 focus:ring-slate-900 dark:focus:ring-white shadow-sm",
   outline:
@@ -40,6 +40,6 @@ const Element = href ? "a" : "button";
 const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className || ""}`;
 ---
 
-<Element href={href} class={combinedClasses} {...props}>
+<Element href={href} class:list={[combinedClasses]} {...props}>
   <slot />
 </Element>

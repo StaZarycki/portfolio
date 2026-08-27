@@ -1,5 +1,7 @@
 ---
+import Button from "./Button.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import { resolvePath } from "../utils/navigation.ts";
 ---
 
 <section class="relative pt-32 pb-32 lg:pt-48 lg:pb-40 overflow-hidden">
@@ -26,21 +28,9 @@ import ThemeToggle from "./ThemeToggle.astro";
   <div
     class="container mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll"
   >
-    <!--<div class="flex justify-center mb-8">-->
-    <!--  <Badge-->
-    <!--    variant="primary"-->
-    <!--    class="px-4 py-1.5 text-sm border border-primary-200 dark:border-primary-800 backdrop-blur-md bg-white/50 dark:bg-primary-900/50"-->
-    <!--  >-->
-    <!--    <span class="mr-2">🚀</span> Zenix v2.0 is now live-->
-    <!--  </Badge>-->
-    <!--</div>-->
-
     <h1
       class="text-6xl sm:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white mb-8 max-w-5xl mx-auto leading-[1.1]"
     >
-      <!--A calmer foundation for <span class="text-gradient"-->
-      <!--  >modern SaaS websites.</span-->
-      <!--&gt;-->
       Stanisław Zarycki
     </h1>
 
@@ -52,26 +42,18 @@ import ThemeToggle from "./ThemeToggle.astro";
     </p>
 
     <!-- Buttons -->
-    <!--<div-->
-    <!--  class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"-->
-    <!--&gt;-->
-    <!--  <Button-->
-    <!--    href={resolvePath("/pricing/")}-->
-    <!--    variant="primary"-->
-    <!--    size="lg"-->
-    <!--    class="w-full sm:w-auto text-lg px-8 py-4 shadow-xl shadow-primary-500/20"-->
-    <!--  >-->
-    <!--    Start Building Now-->
-    <!--  </Button>-->
-    <!--  <Button-->
-    <!--    href="#features"-->
-    <!--    variant="outline"-->
-    <!--    size="lg"-->
-    <!--    class="w-full sm:w-auto text-lg px-8 py-4 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"-->
-    <!--  >-->
-    <!--    Explore Skills-->
-    <!--  </Button>-->
-    <!--</div>-->
+    <div
+      class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
+    >
+      <Button
+        href={resolvePath("/#contact-form")}
+        variant="primary"
+        size="lg"
+        class="w-full sm:w-auto text-lg px-8 py-4 shadow-xl shadow-primary-500/20"
+      >
+        Contact
+      </Button>
+    </div>
 
     <!-- Complex Mockup Image Area -->
     <!--<div-->
