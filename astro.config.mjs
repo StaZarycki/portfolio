@@ -5,11 +5,14 @@ import { passthroughImageService } from "astro/config";
 
 import mdx from "@astrojs/mdx";
 
+// import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://zenix.farrosfr.com",
+  site: "https://stazarycki.com",
   base: "/",
   trailingSlash: "always",
+  output: "static",
 
   build: {
     inlineStylesheets: "always",
@@ -25,4 +28,5 @@ export default defineConfig({
   },
 
   integrations: [mdx()],
+  // adapter: cloudflare(),
 });
