@@ -1,0 +1,25 @@
+﻿---
+const { type } = Astro.props;
+const typeMap = new Map();
+
+typeMap.set("programming", {
+  darkColor: "bg-accent-900/20",
+  color: "bg-accent-200",
+});
+typeMap.set("technology", {
+  darkColor: "bg-purple-900/20",
+  color: "bg-purple-200",
+});
+typeMap.set("concept", {
+  darkColor: "bg-blue-900/20",
+  color: "bg-blue-200",
+});
+
+const { color, darkColor } = typeMap.get(type);
+---
+
+<div
+  class=`w-22 h-22 leading-relaxed flex flex-col items-center justify-center text-6xl dark:${darkColor} ${color} rounded-2xl`
+>
+  <slot />
+</div>

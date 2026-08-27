@@ -12,6 +12,7 @@ import MariaDB from "../content/images/MariaDB.svg";
 import Fastify from "../content/images/Fastify.svg";
 import GraphQL from "../content/images/GraphQL.svg";
 import RabbitMQ from "../content/images/RabbitMQ.svg";
+import SkillPill from "./SkillPill.astro";
 ---
 
 <script>
@@ -42,7 +43,7 @@ import RabbitMQ from "../content/images/RabbitMQ.svg";
 
     <!-- Bento Grid -->
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:grid-rows-[minmax(260px,auto)_minmax(280px,auto)] gap-4 max-w-7xl mx-auto"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:grid-rows-[minmax(260px,auto)_minmax(280px,auto)] gap-4 max-w-8xl mx-auto"
     >
       <!-- Feature 1: Large Span 2x2 -->
       <!--<div-->
@@ -98,38 +99,32 @@ import RabbitMQ from "../content/images/RabbitMQ.svg";
         </h3>
         <div class="flex items-center justify-center w-full h-full">
           <div
-            class="flex flex-row flex-wrap items-center justify-center w-48 gap-4 text-accent-600 dark:text-accent-400"
+            class="flex flex-row flex-wrap sm:p-2 items-center justify-center gap-4 text-accent-600 dark:text-accent-400"
           >
-            <div
-              class="w-12 h-12 leading-relaxed flex items-center justify-center text-6xl"
-            >
+            <SkillPill type="programming">
               <wa-icon name="js" family="brands"></wa-icon>
-            </div>
-            <div
-              class="w-12 h-12 leading-relaxed flex items-center justify-center text-6xl"
-            >
+              <div class="text-sm">JavaScript</div>
+            </SkillPill>
+            <SkillPill type="programming">
               <wa-icon name="typescript" family="brands"></wa-icon>
-            </div>
-            <div
-              class="w-12 h-12 leading-relaxed flex items-center justify-center text-6xl"
-            >
+              <div class="text-sm">JavaScript</div>
+            </SkillPill>
+            <SkillPill type="programming">
               <wa-icon name="python" family="brands"></wa-icon>
-            </div>
-            <div
-              class="w-12 h-12 leading-relaxed flex items-center justify-center text-6xl"
-            >
+              <div class="text-sm">Python</div>
+            </SkillPill>
+            <SkillPill type="programming">
               <CSharp width="full" height="full" fill="currentColor" />
-            </div>
-            <div
-              class="w-12 h-12 leading-relaxed flex items-center justify-center text-6xl"
-            >
+              <div class="text-sm">C#</div>
+            </SkillPill>
+            <SkillPill type="programming">
               <CPlusPlus width="full" height="full" fill="currentColor" />
-            </div>
-            <div
-              class="w-12 h-12 leading-relaxed flex items-center justify-center text-6xl"
-            >
+              <div class="text-sm">C++</div>
+            </SkillPill>
+            <SkillPill type="programming">
               <C width="full" height="full" fill="currentColor" />
-            </div>
+              <div class="text-sm">C</div>
+            </SkillPill>
           </div>
         </div>
       </div>
@@ -150,44 +145,56 @@ import RabbitMQ from "../content/images/RabbitMQ.svg";
         </h3>
         <div class="flex items-center justify-center w-full h-full">
           <div
-            class="flex flex-row flex-wrap items-center justify-center w-48 gap-4 text-purple-600 dark:text-purple-400"
+            class="flex flex-row flex-wrap items-center justify-center gap-4 text-purple-600 dark:text-purple-400"
           >
-            <div class="w-12 h-12 text-6xl">
+            <SkillPill type="technology">
               <NodeJS fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-6xl">
+              <div class="text-sm">NodeJS</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <NestJS fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-6xl">
+              <div class="text-sm">NestJS</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <Express fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-4xl">
+              <div class="text-sm">Express.js</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <Fastify fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-6xl">
+              <div class="text-sm">Fastify</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <FastAPI fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-4xl">
+              <div class="text-sm">FastAPI</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <GraphQL fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-6xl">
+              <div class="text-sm">GraphQL</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <PostgreSQL fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-6xl">
+              <div class="text-sm">PostgreSQL</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <MongoDB fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-4xl">
+              <div class="text-sm">MongoDB</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <MariaDB fill="currentColor" />
-            </div>
-            <div class="w-12 h-12 text-4xl">
+              <div class="text-sm">MariaDB</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <wa-icon name="docker" family="brands"></wa-icon>
-            </div>
-            <div class="w-12 h-12 text-4xl">
+              <div class="text-sm">Docker</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <wa-icon name="aws" family="brands"></wa-icon>
-            </div>
-            <div class="w-12 h-12 text-4xl">
+              <div class="text-sm">AWS</div>
+            </SkillPill>
+            <SkillPill type="technology">
               <RabbitMQ fill="currentColor" />
-            </div>
+              <div class="text-sm">RabbitMQ</div>
+            </SkillPill>
           </div>
         </div>
       </div>
