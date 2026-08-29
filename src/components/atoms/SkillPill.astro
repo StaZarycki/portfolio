@@ -1,9 +1,10 @@
 ﻿---
 interface Props {
   type: "programming" | "technology" | "concept";
+  class?: string;
 }
 
-const { type } = Astro.props;
+const { type, class: className } = Astro.props;
 
 const typeMap = {
   programming: {
@@ -26,6 +27,7 @@ const activeTheme = typeMap[type] ?? typeMap.programming;
 <div
   class:list={[
     "w-22 h-22 leading-relaxed flex flex-col items-center justify-center text-6xl rounded-2xl",
+    className,
     // activeTheme.color,
     // activeTheme.darkColor,
   ]}

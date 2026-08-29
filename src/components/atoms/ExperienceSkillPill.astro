@@ -1,0 +1,20 @@
+﻿---
+import SkillPill from "./SkillPill.astro";
+
+interface Props {
+  type?: "programming" | "technology" | "concept";
+  class?: string;
+}
+
+const { type, class: className } = Astro.props;
+---
+
+<SkillPill
+  type={type ?? "programming"}
+  class:list={[
+    "m-auto px-2 py-2 w-auto h-auto text-lg bg-accent-400/10 rounded-2xl",
+    className,
+  ]}
+>
+  <slot />
+</SkillPill>

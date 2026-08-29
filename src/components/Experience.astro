@@ -1,3 +1,169 @@
 ﻿---
+import ExperiencePill from "./atoms/ExperiencePill.astro";
+import ExperienceSkillPill from "./atoms/ExperienceSkillPill.astro";
+import ExperienceTextSkillPill from "./atoms/ExperienceTextSkillPill.astro";
 
+import NodeJS from "../content/images/Node.js.svg";
+import NestJS from "../content/images/Nest.js.svg";
+import Express from "../content/images/Express.svg";
+import GraphQL from "../content/images/GraphQL.svg";
+import PostgreSQL from "../content/images/PostgresSQL.svg";
+import MongoDB from "../content/images/MongoDB.svg";
+import PhaserLogo from "../content/images/Phaser_Logo.png";
+import Image from "astro/components/Image.astro";
 ---
+
+<script>
+  import "@awesome.me/webawesome/dist/components/icon/icon.js";
+</script>
+
+<section
+  id="skills"
+  class="py-32 bg-slate-50 dark:bg-[#0c0c0f] border-y border-slate-200 dark:border-slate-800 relative overflow-hidden"
+>
+  <!-- Subtle dark background glow -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200/50 via-transparent to-transparent dark:from-primary-900/10 dark:via-transparent dark:to-transparent"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex sm:flex-row flex-col mx-auto reveal-on-scroll text-center">
+      <div
+        class="sm:w-0 mx-auto w-12 sm:text-3xl text-xl text-slate-400 my-2 sm:my-auto"
+      >
+        <wa-icon name="briefcase"></wa-icon>
+      </div>
+      <div class="mx-auto flex-4 w-full">
+        <h2
+          class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 dark:text-white mb-6"
+        >
+          Experience<br /><span class="text-slate-400 dark:text-slate-500"
+            >building commercial products.</span
+          >
+        </h2>
+      </div>
+    </div>
+
+    <div>
+      <ExperiencePill>
+        <div slot="company">Nokia</div>
+        <div slot="position">Software Developer (Working Student)</div>
+        <div slot="years">2026 - currently</div>
+        <div slot="tags" class="flex flex-row gap-2">
+          <ExperienceSkillPill>
+            <wa-icon name="js" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <wa-icon name="docker" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceTextSkillPill> Scrum </ExperienceTextSkillPill>
+        </div>
+        <div slot="description">
+          Developing and maintaining an internal network protocol analysis tool
+          utilized by thousands of engineers across global teams. Implementing
+          high-throughput data processing routines, optimizing payload parsing
+          logic, and actively contributing to automated test suites within an
+          Agile environment.
+        </div>
+      </ExperiencePill>
+      <ExperiencePill>
+        <div slot="company">MasterBorn</div>
+        <div slot="position">Junior Backend Developer > Backend Developer</div>
+        <div slot="years">2022 - 2025</div>
+        <div slot="tags" class="flex flex-row flex-wrap gap-2">
+          <ExperienceSkillPill>
+            <wa-icon name="typescript" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <NodeJS fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <NestJS fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <Express fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <GraphQL fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <PostgreSQL fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <MongoDB fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <wa-icon name="aws" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <wa-icon name="docker" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceTextSkillPill> REST API </ExperienceTextSkillPill>
+          <ExperienceTextSkillPill> Software Testing </ExperienceTextSkillPill>
+          <ExperienceTextSkillPill> Scrum </ExperienceTextSkillPill>
+        </div>
+        <div slot="description">
+          Designed and maintained resilient backend architectures using Node.js,
+          TypeScript, and Nest.js/Fastify. Authored ArchitectureDecision Records
+          (ADRs) for critical system workflows, handled asynchronous message
+          processing via RabbitMQ, and managed cloud infrastructure with AWS and
+          Docker. Optimized relational (PostgreSQL) and NoSQL (MongoDB) database
+          queries for high availability.
+        </div>
+      </ExperiencePill>
+      <ExperiencePill>
+        <div slot="company">Klarna</div>
+        <div slot="position">Junior JavaScript Developer</div>
+        <div slot="years">2021 - 2022</div>
+        <div slot="tags" class="flex flex-row flex-wrap gap-2">
+          <ExperienceSkillPill>
+            <wa-icon name="js" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <NodeJS fill="currentColor" />
+          </ExperienceSkillPill>
+          <ExperienceTextSkillPill> Scrum </ExperienceTextSkillPill>
+        </div>
+        <div slot="description">
+          Maintained and created core object configurations and data schema
+          validations using JavaScript, JSON, and YAML. Collaborated closely
+          with cross-functional QA teams to investigate, debug, and resolve
+          edge-case issues in automated workflows.
+        </div>
+      </ExperiencePill>
+      <ExperiencePill>
+        <div slot="company">BAAD Games</div>
+        <div slot="position">JavaScript Developer</div>
+        <div slot="years">2019 - 2020</div>
+        <div slot="tags" class="flex flex-row flex-wrap gap-2">
+          <ExperienceSkillPill>
+            <wa-icon name="js" family="brands"></wa-icon>
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <Image src={PhaserLogo} alt="PhaserJS" />
+          </ExperienceSkillPill>
+          <ExperienceSkillPill>
+            <NodeJS fill="currentColor" />
+          </ExperienceSkillPill>
+        </div>
+        <div slot="description">
+          Built interactive HTML5 playable ads and standalone mini-games from
+          concept to production using JavaScript and the Phaser framework.
+          Focused on cross-browser compatibility, asset optimization, and smooth
+          60 FPS rendering under constrained network environments.
+        </div>
+      </ExperiencePill>
+    </div>
+  </div>
+</section>
+
+<style>
+  svg,
+  img {
+    height: 18px;
+  }
+  img {
+    width: 18px;
+  }
+</style>
