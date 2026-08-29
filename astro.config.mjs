@@ -11,7 +11,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: "https://stazarycki.com",
   base: "/",
-  trailingSlash: "always",
+  trailingSlash: "ignore",
   output: "static",
 
   build: {
