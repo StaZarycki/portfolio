@@ -2,33 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Skills from "../components/Skills.astro";
-import ContactForm from "../components/ContactForm.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <BaseLayout title="Home">
   <Hero />
   <Skills />
 
-  <!-- Final CTA Section before footer -->
-  <section
-    class="py-32 bg-primary-600 dark:bg-primary-900 text-white text-center relative overflow-hidden"
-  >
-    <div
-      class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjE1KSI+PC9jaXJjbGU+Cjwvc3ZnPg==')] opacity-50 scale-120"
-    >
-    </div>
-    <div
-      class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10 reveal-on-scroll"
-    >
-      <h2
-        class="text-4xl md:text-6xl font-heading font-extrabold mb-6 tracking-tight"
-      >
-        Ready to collaborate?
-      </h2>
-      <p class="text-xl text-primary-100 dark:text-primary-200 mb-12">
-        Let's get in touch.
-      </p>
-      <ContactForm />
-    </div>
-  </section>
+  <Contact />
 </BaseLayout>
